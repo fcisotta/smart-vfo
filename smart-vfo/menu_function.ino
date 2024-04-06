@@ -255,7 +255,7 @@ void enter_menu_item() {
         strcpy_P(menu_values_domain+menu_values_len, PSTR("4 mA"));
         strcpy_P(menu_values_domain+menu_values_len*2, PSTR("6 mA"));
         strcpy_P(menu_values_domain+menu_values_len*3, PSTR("8 mA"));
-        if (menu_curitem == 5) {
+        if (menu_curitem == 6) {
           menu_curvalue = __dds_pwr0;
         }
         else {

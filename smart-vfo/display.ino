@@ -67,7 +67,7 @@ void display_vfo_mem() {
   }
   else if (state == STATE_MEM_DIAL) {
     lcd.setCursor(0, 0);
-    lcd.print(PSTR("  m"));
+    lcd.print("  m");
     display_upd_cur_mem();
   }
 }
@@ -418,7 +418,7 @@ void display_err(const __FlashStringHelper*errmsg) {
   lcd.noCursor();
   display_clear_line(0);
   lcd.setCursor(0, 0);
-  lcd.print(PSTR("ERROR"));
+  lcd.print("ERROR");
   display_clear_line(1);
   lcd.setCursor(0, 1);
   lcd.print(errmsg);

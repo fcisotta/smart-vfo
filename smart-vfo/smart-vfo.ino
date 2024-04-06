@@ -28,7 +28,7 @@
 // leave uncommented until Si5351 is connected to Arduino
 //#define MOCK_Si5351
 
-#define FW_VERSION           PSTR("v0.13 Dec 2023")
+#define FW_VERSION           PSTR("v0.14 Apr 2024")
 
 // Pinout configuration
 
@@ -310,7 +310,7 @@ band bands[] = {
 
 
 // operating param cache
-int32_t _o_rit[BANDS_NO][2] = {0};
+int32_t _o_rit[2][BANDS_NO] = { };
 
 /****** eeprom management ******/
 #define EEPROM_DATAMODEL_VERSION   10  // always greater than 0, to stay apart from blank eeprom

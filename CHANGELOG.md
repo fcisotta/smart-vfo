@@ -1,6 +1,10 @@
 
 # Version history
 
+### 0.14 (2024-04-06)
+- Fixed reading of current CLK0 power in calibration menu
+- Fixed RIT caches on VFO B
+
 ### 0.13 (2023-12-08)
 - Consistency check among menu params (only applicable are shown)
 
