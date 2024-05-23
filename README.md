@@ -1,4 +1,4 @@
-This is a flexible multi-band VFO firmware running on the Arduino platform, driving a Skyworks (formerly SiliconLabs) [Si5351](https://www.skyworksinc.com/-/media/Skyworks/SL/documents/public/data-sheets/Si5351-B.pdf) DDS.
+This is a flexible **multi-band VFO firmware** running on the Arduino platform, driving a Skyworks (formerly SiliconLabs) [Si5351](https://www.skyworksinc.com/-/media/Skyworks/SL/documents/public/data-sheets/Si5351-B.pdf) DDS.
 
 This work started from the Multifeatured VFO project by [Jason Milldrum (NT7S)](mailto:milldrum@gmail.com) and [Przemek Sadowski (SQ9NJE)](https://sq9nje.pl/), and moved to the goal of implementing a set of features generally available in commercial-grade transceivers, while keeping focus on performance and maintainability.
 
@@ -14,6 +14,11 @@ Initial authors: [Giovanni Caracuta (I7IWN)](mailto:g.caracuta@libero.it) and [F
 
 <br/>
 
+> [!NOTE]  
+> A [fork of this project](https://github.com/fcisotta/smart-vfo-mono) is available, addressing **single band RTX operations**.
+> While one band only is supported in this variant, this allowed featuring complete band configuration at runtime (band limits, along with conversion design, power levels, etc. may be set in the calibration menu, with the front-end controls). Thus, no coding is required to set up firmware for the RTX project. 
+
+<br/><br/>
 
 # Table of contents
 
@@ -62,7 +67,10 @@ Other components are outlined in the circuit schematic below.
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ![UI panel](res/UI/UI-panel.png)
 
-Functions labelled in blue over buttons may be activated by a long press (> 1 s).
+Blue-labeled button functions may be activated by a long press (> 1 s).
+
+Red-labeled button functions are enforced at boot time.
+
 
 <br/>
 
