@@ -51,7 +51,7 @@ void rotate_step() {
   if (state == STATE_VFO_DIAL && substate == SUBSTATE_OP) {
     step *= 10;
     if (step > 1000000)
-      step = 10;
+      step = 1;
     ee_store_step();  
   }
   else if (state == STATE_VFO_DIAL && substate == SUBSTATE_RIT_OP) {

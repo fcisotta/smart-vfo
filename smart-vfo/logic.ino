@@ -18,6 +18,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+int8_t enc_buff = 0;
+byte enc_lastop = DIR_CW;
+
 /**************************************/
 /* Interrupt service routine for      */
 /* encoder frequency change           */
@@ -29,6 +32,18 @@ ISR(PCINT2_vect) {
   /* dir = DIR_CCW   Decrement          */
   /**************************************/
   if (!ui_lock && cur_op != OP_TX && result > 0) {
+
+    // encoder run scaler
+    if (result == enc_lastop)
+      enc_buff++;
+    else {
+      enc_lastop = result;
+      enc_buff = 1;
+    }
+    if (enc_buff < __enc_scale)
+      return;
+    else
+      enc_buff = 0;
 
     if (state == STATE_VFO_DIAL && substate == SUBSTATE_OP) {
       rotate_freq(result);

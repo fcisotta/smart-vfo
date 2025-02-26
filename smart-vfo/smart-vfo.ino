@@ -163,7 +163,9 @@ uint16_t __ssb_offset, __cw_offset;
 int32_t __dds_cal;
 int8_t __dds_pwr0;
 int8_t __dds_pwr2;
+int32_t __enc_scale;
 int32_t __tuning_dds_cal;
+
 
 #define DESIGN_SINGLE_CONV   0
 #define DESIGN_DIRECT_CONV   1
@@ -174,6 +176,8 @@ int32_t __tuning_dds_cal;
 
 #define DDS_TUNING_FREQ   (1000000000ULL / SI5351_FREQ_MULT)
 #define MAX_DDS_CAL_VALUE 9000
+
+#define MAX_ENCODER_SCALE_VALUE 30
 
 // operating params
 byte cur_vfo;
@@ -313,7 +317,7 @@ band bands[] = {
 int32_t _o_rit[2][BANDS_NO] = { };
 
 /****** eeprom management ******/
-#define EEPROM_DATAMODEL_VERSION   10  // always greater than 0, to stay apart from blank eeprom
+#define EEPROM_DATAMODEL_VERSION   11  // always greater than 0, to stay apart from blank eeprom
 
 #define MEM_BOOT_ADDR          0
 #define MEM_PARAMS_ADDR       10

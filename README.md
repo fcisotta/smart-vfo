@@ -179,6 +179,7 @@ They are persisted into the EEPROM, and may always be reset to factory defaults 
 | DDS calibration | Frequency correction value for Si5351 (in Hz units)                        | -9.000 - 9.000 Hz      | 0 Hz             |
 | CLK0 power      | Si5351 power level at CLK0 output                                          | 2 - 8 mA current out   | 8 mA             |
 | CLK2 power      | Si5351 power level at CLK2 output *(applies to Single conversion design only)*                                          | 2 - 8 mA current out   | 8 mA             |
+| Encoder scale   | Scaling factor on encoder shaft rotation steps                             | 1 - 30                 | 1                 |
 
 DDS calibration is allowed at runtime, since the Si5351 is powered and CLK0 set to a reference frequency of 10,000 MHz while editing the correction factor. Please tune this parameter until the output measured on CLK0 is as close to 10 MHz as possible. Then press `ENTER`.
 

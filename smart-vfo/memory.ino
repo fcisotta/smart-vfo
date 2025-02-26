@@ -186,6 +186,10 @@ void ee_store_dds_pwr()
   EEPROM.update(MEM_CAL_PARAMS_ADDR+16, __dds_pwr2);
 }
 
+void ee_store_enc_scale()
+{
+  eeprom_uint32update(MEM_CAL_PARAMS_ADDR+17, __enc_scale);
+}
 
 /**************************************/
 /* Boot time current params load      */
@@ -212,6 +216,7 @@ void ee_boot_load()
   EEPROM.get(MEM_CAL_PARAMS_ADDR+10, __dds_cal);
   EEPROM.get(MEM_CAL_PARAMS_ADDR+14, __dds_pwr0);
   EEPROM.get(MEM_CAL_PARAMS_ADDR+16, __dds_pwr2);
+  EEPROM.get(MEM_CAL_PARAMS_ADDR+17, __enc_scale);
 
 }
 
@@ -281,6 +286,8 @@ void ee_init()
   __dds_pwr2 = 3;
   ee_store_dds_pwr();
 
+  __enc_scale = 1;
+  ee_store_enc_scale();
 
   // operations data
   op_record vfos[BANDS_NO] = {
